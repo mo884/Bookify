@@ -1,0 +1,43 @@
+﻿@model CategoryView
+@{
+    ViewData["Title"] = "Create Category";
+}
+<div class="card shadow-sm">
+    <div class="card-header">
+        <h3 class="card-title">Add Category</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <form method="post" asp-action="Create" asp-controller="Categories">
+                    <div class="form-floating mb-7">
+                        <input type="text" class="form-control " asp-for="Name" placeholder="Name" />
+                        <label asp-for="Name">Name</label>
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-check2"></i>
+                        Save
+                    </button>
+                </form>
+            </div>
+        </div>
+       
+    </div>
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+
+@*
+
+<div class="card shadow-sm">
+    <div class="card-header">
+        <h3 class="card-title">Add Category</h3>
+    </div>
+    <div class="card-body">
+        <form method="post" asp-action="Create" asp-controller="Categories">
+        </form>
+    </div>
+</div>*@
